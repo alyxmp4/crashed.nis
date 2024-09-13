@@ -38,7 +38,9 @@ export const login = async (
       .then((res) => res.data)
 
     const {
-      school: { gid: schoolId },
+      data: {
+        School: { Gid: schoolId },
+      },
     } = await getAdditionalUserInfo(accessToken)
 
     const schoolOrganization = applications.find((application) => {
@@ -63,6 +65,8 @@ export const login = async (
       success: true,
     }
   } catch (e) {
+    console.log(e)
+
     if (isAxiosError(e) && e.response?.status === 400) {
       return { errors: { password: 'Неверный пароль или ИИН' }, success: false }
     } else

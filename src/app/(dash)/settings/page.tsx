@@ -34,7 +34,7 @@ const Page = () => {
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent position="item-aligned">
             <SelectItem value="asc">По алфавиту</SelectItem>
             <SelectItem value="score-up">По возрастанию</SelectItem>
             <SelectItem value="score-down">По убыванию</SelectItem>

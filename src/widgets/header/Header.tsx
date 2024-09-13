@@ -28,7 +28,7 @@ const Header = () => {
           ))}
         {!isError && contingent && (
           <p className="text-ellipsis text-[14px] leading-none text-muted-foreground sm:text-[16px]">
-            {contingent.klass} - {contingent.school?.name?.ru || ''}
+            {contingent.data.Klass} - {contingent.data.School?.Name?.ru || ''}
           </p>
         )}
       </div>

@@ -41,17 +41,20 @@ export type Userinfo = {
 }
 
 export type AdditionalUserInfo = {
-  photoUrl: string
-  klass: string
-  school: {
-    gid: string
-    name: {
-      kk: string
-      ru: string
-      en: string
+  success: boolean
+  data: {
+    PhotoUrl: string
+    Klass: string
+    School: {
+      Gid: string
+      Name: {
+        kk: string
+        ru: string
+        en: string
+      }
     }
+    Children: never
   }
-  children: never
 }
 
 export type Schedule = {
