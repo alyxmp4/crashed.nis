@@ -16,8 +16,11 @@ const getColor = (mark: number): string => {
 }
 
 const calculateRubricScore = (rubrics: Rubric[]) => {
-  const totalMark = rubrics.reduce((acc, rubric) => acc + rubric.mark, 0)
-  const totalMaxMark = rubrics.reduce((acc, rubric) => acc + rubric.maxMark, 0)
+  const totalMark = rubrics.reduce((acc, rubric) => acc + ~~rubric.mark, 0)
+  const totalMaxMark = rubrics.reduce(
+    (acc, rubric) => acc + ~~rubric.maxMark,
+    0,
+  )
 
   if (totalMaxMark === 0) {
     return { score: 0, totalMark, totalMaxMark }

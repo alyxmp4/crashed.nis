@@ -146,8 +146,8 @@ export type Rubric = {
     ru: string
     en: string
   }
-  mark: number
-  maxMark: number
+  mark: string
+  maxMark: string
   description: {
     kk: string
     ru: string
