@@ -8,6 +8,7 @@ const agent = new https.Agent({
 
 const proxy = axios.create({
   httpsAgent: agent,
+  timeout: 20000,
 })
 
 proxy.interceptors.request.use((config) => {
