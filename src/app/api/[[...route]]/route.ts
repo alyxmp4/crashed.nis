@@ -5,6 +5,7 @@ import { cors } from 'hono/cors'
 import { createMiddleware } from 'hono/factory'
 import { resolveSession, Session } from '@/lib/token/resolver'
 import { getCookie } from 'hono/cookie'
+import { timeout } from 'hono/timeout'
 import { HTTPException } from 'hono/http-exception'
 import auth from '@/server/routers/auth'
 import bridge from '@/server/routers/bridge'
@@ -14,7 +15,7 @@ export const runtime = env.RUNTIME
 
 const app = new Hono().basePath('/api')
 
-app.use(compress(), cors())
+app.use(compress(), cors(), timeout(20000))
 
 type RequestWithSession = {
   Variables: {
