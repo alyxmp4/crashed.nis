@@ -12,7 +12,7 @@ import bridge from '@/server/routers/bridge'
 import { env } from '@/env'
 
 export const runtime = env.RUNTIME
-export const maxDuration = 20
+export const maxDuration = 30
 
 const app = new Hono().basePath('/api')
 
